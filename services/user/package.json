@@ -1,0 +1,30 @@
+{
+  "name": "@services/user",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "npx rimraf dist .turbo tsconfig.tsbuildinfo",
+    "build": "npx tsc && npx tsc-alias",
+    "start": "node ./dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@auroravpn/fastify-inversify": "^1.0.0",
+    "@packages/common": "workspace:*",
+    "@packages/db": "workspace:*",
+    "@packages/sd": "workspace:*",
+    "bcrypt": "^6.0.0",
+    "class-validator": "^0.14.3",
+    "inversify": "^7.11.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0"
+  }
+}

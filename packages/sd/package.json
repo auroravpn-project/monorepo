@@ -1,0 +1,25 @@
+{
+  "name": "@packages/sd",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "npx rimraf dist .turbo tsconfig.tsbuildinfo",
+    "build": "npx tsc"
+  },
+  "dependencies": {
+    "consul": "^2.0.1",
+    "yaml": "^2.8.1"
+  }
+}

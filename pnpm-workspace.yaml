@@ -1,0 +1,6 @@
+packages:
+  - 'packages/*'
+  - 'services/*'
+
+settings:
+  inject-workspace-packages: true

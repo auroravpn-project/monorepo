@@ -1,0 +1,21 @@
+{
+  "files.associations": {
+    "**/tsconfig/**": "jsonc",
+    "**/tsconfig/package.json": "json"
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.turbo": true,
+    "**/tsconfig.tsbuildinfo": true,
+    "**/*.tar": true,
+    "**/prod": true
+  },
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "editor.formatOnSave": false,
+  // "git.decorations.enabled": false
+}

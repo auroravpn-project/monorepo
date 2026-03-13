@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    /* ========== 编译目标 & 模块系统 ========== */
+    "target": "es2024",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    /* ========== 输入 / 输出 ========== */
+    "rootDir": ".",
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true,
+    /* ========== 语言特性 ========== */
+    "strict": true,
+    "useDefineForClassFields": false,
+    /* ========== Node / 运行环境 ========== */
+    "lib": [
+      "ES2020"
+    ],
+    "types": [
+      "node"
+    ],
+    /* ========== 模块互操作 ========== */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    /* ========== 工程健壮性 ========== */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    /* ========== 性能 / 构建 ========== */
+    "incremental": true,
+  },
+  "include": [
+    "services/*/src",
+    "packages/*/src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

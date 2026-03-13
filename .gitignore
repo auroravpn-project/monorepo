@@ -1,0 +1,15 @@
+# 依赖目录
+node_modules/
+
+# 生产构建
+dist/
+generated/
+prod/
+.turbo/
+*.tar
+
+tsconfig.tsbuildinfo
+
+# IDE
+.vscode/**
+!.vscode/settings.json
