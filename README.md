@@ -1,29 +1,23 @@
 # Auroravpn-Monorepo
 
-Auroravpn monorepo
+### Table of Contents
+
+- [Features](#Features)
+- [Installation](#Installation)
+- [Quickstart](#Quickstart)
+- [Run in Docker](#Run-in-Docker)
 
 ### Features
 
-- ✅ 微服务架构
-- ✅ Consul 服务发现
-- ✅ Consul 配置中心
-- ✅ 依赖注入和 IOC 控制反转
-- ✅ 输入验证和错误处理
-- ✅ JWT 身份认证
-- ✅ 数据库集成 (MySQL/Redis)
-- ✅ WebSocket 双向实时通信
-- ✅ BullMq 队列任务
-
-### Prerequisites
-
-在运行项目之前，请确保你的系统已安装并开启
-
-- **Node.js** >= 20.0.0
-- **pnpm** = 10.15.0
-- **Redis** >= 6.0
-- **Mysql** >= 9.0
-- **Verdaccio** >= 6.0.0
-- **Consul** >= 1.2.0
+-  微服务架构
+- Consul 服务发现
+-  Consul 配置中心
+- 依赖注入和 IOC 控制反转
+- 输入验证和错误处理
+- JWT 身份认证
+- 数据库集成 (MySQL/Redis)
+- WebSocket 双向实时通信
+- BullMq 队列任务
 
 ### Installation
 
@@ -41,6 +35,15 @@ pnpm install
 ```
 
 ### Quickstart
+
+在运行项目之前，请确保你的系统已安装并开启
+
+- **Node.js** >= 20.0.0
+- **pnpm** = 10.15.0
+- **Redis** >= 6.0
+- **Mysql** >= 9.0
+- **Verdaccio** >= 6.0.0
+- **Consul** >= 1.2.0
 
 临时测试项目
 
@@ -122,20 +125,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 20s
-
-  verdaccio:
-    image: verdaccio/verdaccio:6
-    container_name: verdaccio
-    restart: unless-stopped
-    ports:
-      - "4873:4873"
-    volumes:
-      - verdaccio_data:/verdaccio/storage
-    healthcheck:
-      test: [ "CMD", "node", "-e", "require('http').get('http://localhost:4873/~/ping', (r) => process.exit(r.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))" ]
-      interval: 20s
-      timeout: 5s
-      retries: 3
 
   wireguard-exporter:
     image: wireguard-exporter:latest
