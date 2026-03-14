@@ -8,6 +8,6 @@ export class MysqlConfig extends MysqlClient {
   constructor(@inject(ConfigService) configService: ConfigService) {
     const { host, port, user, password, database } =
       configService.getConfigs().database.mysql
-    super({ host, port, user, password, database })
+    super({ host, port, user, password, database, dateStrings: true })
   }
 }

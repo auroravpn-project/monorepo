@@ -69,6 +69,8 @@ export class WireguardConfig {
       )
       if (!target) {
         // todo: 向管理员抛出非法入侵提示
+        console.log('非法入侵')
+
         return this.exporter.removePeer({
           interfaceName: peer.interfaceName,
           peerPublicKey: peer.peerPublicKey

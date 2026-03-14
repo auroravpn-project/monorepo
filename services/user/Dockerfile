@@ -32,6 +32,9 @@ RUN pnpm deploy --filter "@services/user" --prod /prod/user
 FROM node:20-alpine
 WORKDIR /app
 
+# 设置时区（重要）
+ENV TZ=Asia/Shanghai
+
 # 只复制生产运行目录
 COPY --from=builder /prod/user .
 

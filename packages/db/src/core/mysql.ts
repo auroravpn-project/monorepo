@@ -12,9 +12,7 @@ export class MysqlClient extends BaseClient {
     super()
     try {
       this.pool = mysql.createPool({
-        user: config.user,
-        password: config.password,
-        database: config.database,
+        ...config,
         host: config.host || 'localhost',
         port: config.port || 3306
       })

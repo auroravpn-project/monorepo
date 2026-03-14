@@ -26,6 +26,8 @@ export class DataController {
     @Valid(DateDTO) @Param('date') date: string
   ) {
     if (isDailyDateStr(date)) {
+      console.log(date)
+
       return this.dataService.getDailyData(req.uid, date)
     } else {
       return this.dataService.getMonthyData(req.uid, date)

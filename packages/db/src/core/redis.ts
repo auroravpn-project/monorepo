@@ -12,7 +12,11 @@ export class RedisClient extends BaseClient {
   constructor(config: RedisConfig) {
     super()
     try {
-      this.client = new Redis(config)
+      this.client = new Redis({
+        ...config,
+        host: config.host || 'localhost',
+        port: config.port || 6379
+      })
     } catch (error) {
       throw new ConnectionError('Database connection failed')
     }
